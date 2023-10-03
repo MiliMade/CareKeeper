@@ -1,0 +1,21 @@
+{
+  "name": "carekeeper",
+  "version": "1.0.0",
+  "description": "A web app that helps caregivers manage and oversee the well-being and care of someone in need by making note of medications and appointments as well as monitoring the health of patients",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "devStart": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^7.5.3"
+  },
+  "type": "module"
+}
