@@ -19,6 +19,11 @@ app.use(express.urlencoded({extended:true}))
 app.use(methodOverride("_method"))
 app.use(express.static("public"))
 
+app.get("/", (req,res)=>{
+  res.render("index")
+})
+
+
 app.listen(PORT, ()=>{
   console.log(`Whoa! Your server is totally running on port ${PORT}`)
 })
