@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Your patients</h1>
+  <section>
+    <% for (let patient of patients){ %>
+      <article style="border:1px solid black; width:20%; display:flex">
+        <p><%=patient.firstName%> <%=patient.lastName%></p>
+        <p><a href="">See Details</a></p>
+      </article>
+    <% } %>
+  </section>
+</body>
+</html>

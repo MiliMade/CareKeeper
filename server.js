@@ -37,17 +37,14 @@ app.get("/", (req,res)=>{
   res.render("index")
 })
 
-app.get("/patientDetails", async(req,res)=>{
-  const patient = new Patient({
-    firstName: "John", 
-    lastName: "Smith",
-    dateOfBirth: "1960-01-01",
-    medications:[{medicineName:"Tylenol", doseStrength: 500, instructions:"Two tablets every eight hours. Do not exceed 6 per day."}]
-  })
-  await patient.save()
-  res.send(patient)
+app.get("/patients", async(req,res)=>{
+  const patients = await Patient.find({})
+  res.render("patients/index", {patients})
 })
 
+app.get("/patients/:id", async(req,res)=>{
+  
+})
 
 app.listen(PORT, ()=>{
   console.log(`Whoa! Your server is totally running on port ${PORT}`)
