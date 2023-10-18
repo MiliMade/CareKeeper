@@ -30,6 +30,7 @@ app.set("view engine", "ejs")
 app.set("layouts", "layouts/layout")
 
 app.use(express.urlencoded({extended:true}))
+app.use(express.json())
 app.use(methodOverride("_method"))
 app.use(express.static("public"))
 
@@ -43,7 +44,10 @@ app.get("/patients", async(req,res)=>{
 })
 
 app.get("/patients/:id", async(req,res)=>{
-  
+  const {id} = req.params
+  const currentPatient = await Patient.findById({_id : id})
+  res.send(currentPatient)
+
 })
 
 app.listen(PORT, ()=>{
