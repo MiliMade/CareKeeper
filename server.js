@@ -46,10 +46,26 @@ app.get("/patients", async(req,res)=>{
 app.get("/patients/:id", async(req,res)=>{
   const {id} = req.params
   const currentPatient = await Patient.findById({_id : id})
-  res.send(currentPatient)
+  console.log(currentPatient)
+  res.render("patients/patientDetails", {currentPatient})
+})
 
+app.get("/patients/:id/editPatient", async(req,res)=>{
+  const {id} = req.params
+  const currentPatient = await Patient.findById({_id : id})
+  res.render("patients/editPatient", {currentPatient}) 
+})
+
+app.get("/patients/:patientId/:medicineId/editMedication", async(req,res)=>{
+  const {patientId, medicineId} = req.params
+  const currentPatient =  await Patient.findById({_id :patientId})
+  console.log(currentPatient)
+  const medication = currentPatient.medications.map(x => x._id === medicineId)
+
+  console.log(medication)
+  res.render("patients/editMedication") 
 })
 
 app.listen(PORT, ()=>{
   console.log(`Whoa! Your server is totally running on port ${PORT}`)
-})
+})  

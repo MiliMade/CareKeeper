@@ -26,6 +26,18 @@ const medicineSchema = new Schema({
     }
   }
 )
+
+const doctorSchema = new Schema({
+  doctorName:{
+    type:String,
+    required:[true, "Please enter the name of the doctor"]
+  },
+  doctorSpeciality:{
+    type:String,
+    required:[true, "Please enter the doctors speciality"]
+  }
+})
+
 const patientSchema = new Schema({
   firstName:{
     type:String,
@@ -39,9 +51,11 @@ const patientSchema = new Schema({
     type: Date,
     required: [true, "Please enter a date of birth "]
   },
-  medications:[medicineSchema]
+  medications:[medicineSchema],
+  doctors:[doctorSchema]
 })
 
 const Patient = model("Patient", patientSchema)
 
-export default Patient
+
+export default Patient 

@@ -6,6 +6,42 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <h1>Patient Details</h1>
+  <section>
+    <div>
+      <h2>Patient</h2>
+      <p>Name:<%=currentPatient.firstName%> <%=currentPatient.lastName%></p>
+      <p>Age : <%= Math.abs((new Date (Date.now() - currentPatient.dateOfBirth)).getUTCFullYear()) - 1970 %></p>
+      <a href="/patients/<%=currentPatient._id%>/editPatient">Edit patient details</a>
+    </div>
+    <div>
+      <h2>Medications</h2>
+      <div style="margin:20px">
+        <% for (let medication of currentPatient.medications){%>
+          <div style="border:1pt solid black; margin:20px; ">
+            <p>Name:<%=medication.medicineName %></p>
+            <p>Dose:<%=medication.doseStrength%> -  <%=medication.dosageUnit %></p>
+            <p>Directions: <%=medication.directions%></p>
+            <p>Warnings: <%=medication.warnings%></p>
+          </div>
+          <a href="/patients/<%=currentPatient._id%>/<%=medication._id %>/editMedication">Edit this medication</a>
+        <%}%> 
+      </div>
+      <a href="">Add new medication</a>
+    </div>
+    <div >
+      <h2>Doctors</h2>
+      <div style="margin:20px">
+        <% for (let doctor of currentPatient.doctors){%>
+          <div style="border:1pt solid black; margin:20px;">
+            <p>Name:<%=doctor.doctorName %></p>
+            <p>Speciality:<%=doctor.doctorSpeciality%>
+          </div>
+          <a href="">Edit doctor information</a>
+        <%}%> 
+      </div>
+      <a href="">Add a doctor</a>
+    </div>
+  </section>
 </body>
 </html>

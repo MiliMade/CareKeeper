@@ -35,6 +35,16 @@ const seeds = [
         directions:"Take two 220mg pills every 24 hours",
         warnings: "Do not exceed 440mg per day"
       }
+    ],
+    doctors:[
+      {
+        doctorName: "Clive Kind",
+        doctorSpeciality: "Cardiology"
+      },
+      {
+        doctorName: "Jenna Love",
+        doctorSpeciality: "Internal Medicine"
+      }
     ]
   },
   {
@@ -45,16 +55,26 @@ const seeds = [
       {
         medicineName: "Advil",
         doseStrength: 200,
-        dosageUnit: "tablet",
+        dosageUnit: "milligram(mg)",
         directions:"1 to 2 200mg tablet/caplet/gel caplet every 4 to 6 hours ",
         warnings: "Do not exceed 6 tablets/caplets/gel caplets in 24 hours unless directed by a doctor."
       },
       {
         medicineName: "Excedrin",
         doseStrength: 2,
-        dosageUnit: "milligram(mg)",
+        dosageUnit: "tablet",
         directions:"Take 2 tablets every 6 hours",
         warnings: "Do not exceed more than 8 tablets in 24 hoursy"
+      }
+    ],
+    doctors:[
+      {
+        doctorName: "Jake Trip",
+        doctorSpeciality: "General Practice"
+      },
+      {
+        doctorName: "Lisa Brown",
+        doctorSpeciality: "Emergency"
       }
     ]
   },
